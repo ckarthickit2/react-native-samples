@@ -102,3 +102,16 @@
     - `Flow` is a __static type-checker__ for Javascript. It can be configured using `.flowconfig`.
     - `App` is a __functional component__ that returns `React$Node`
       - ReactNode is one of `ReactChild | ReactFragment | ReactPortal | boolean | null | undefined`.
+
+8. Run the app.
+
+    ```bash
+        npx react-native run-android #we can alternatively npx react-native run-ios
+        #npm run android also works #(as packages.json has script configured).
+        #npm run ios works too.
+    ```
+
+9. Hot Reload.
+    - `DoubleTap R` on keyboard to reload app's code.
+    - Press CMD (or) Ctrl + M (or) Shake the device to open `debug menu`.
+
