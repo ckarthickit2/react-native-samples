@@ -9,10 +9,13 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
+const textStyle = {
+  fontSize: 20,
+};
 const App: () => React$Node = () => {
   return (
     <View>
-      <Text style={{fontSize:20}}>Hello RN App</Text>
+      <Text style={textStyle}>Hello RN App</Text>
     </View>
   );
 };

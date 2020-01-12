@@ -115,3 +115,8 @@
     - `DoubleTap R` on keyboard to reload app's code.
     - Press CMD (or) Ctrl + M (or) Shake the device to open `debug menu`.
 
+10. Configuring Flow
+
+    ```bash
+        npm add --dev flow-bin
+    ```
