@@ -117,6 +117,31 @@
 
 10. Configuring Flow
 
+    - Check the `.flowconfig` file at the root of the project. Scroll to the bottom and we should be seeing something like below.
+
+    ```yaml
+        [version]
+        ^0.105.0
+    ```
+
     ```bash
+        #npm i flow-bin@0.105.0 --save-dev #This is an alias to npm add
         npm add --dev flow-bin
     ```
+
+    >We are installing flow on a __per project basis__ as different `.flowconfig` configurations call for different versions of flow, and if it is installed globally, it will not work a lot of the times
+
+    - We might get an Error like below in `.js` files for which `flow is configured`.
+
+        ```error
+            install the extension Flow Language Support
+        ```
+
+        We can fix them with the following steps:
+        1. Install the extension Flow Language Support
+        2. Disable the built-in TypeScript extension.
+            1. go to extensions tab.
+            2. search for __@builtin TypeScript and JavaScript Language Features__.
+            3. click on Disable.
+
+    - Add `flow` to `packages.json`.
