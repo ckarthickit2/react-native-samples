@@ -8,15 +8,22 @@
  * @format
  */
 
-import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View, Text, Button} from 'react-native';
 
 declare var global: {HermesInternal: null | {}};
 
 const App: React.FC<void> = () => {
+  const [outputText, setOutputText] = useState(
+    'Open up App.tsx to start working on your app!',
+  );
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>{outputText}</Text>
+      <Button
+        title="Change Text"
+        onPress={() => setOutputText('The Text Changed!')}
+      />
     </View>
   );
 };
