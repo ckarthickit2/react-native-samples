@@ -6,10 +6,12 @@
  */
 
 import React from 'react';
-import HelloScreen from './screens/HelloScreen';
+// import HelloScreen from './screens/HelloScreen';
+import PicScreen from './screens/PicScreen';
 
 const App = () => {
-  return <HelloScreen />;
+  // return <HelloScreen />;
+  return <PicScreen />;
 };
 
 export default App;

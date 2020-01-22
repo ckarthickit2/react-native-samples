@@ -71,5 +71,27 @@ parserOptions: {
   }
 ```
 
+## Configuring Script to run `Prettier`
+
+``` json
+"scripts": {
+  "pretty": "npx prettier \"src/**/*.js*\" --write"
+}
+```
+
+> Now execute `npm run pretty` to apply __prettier__ to all `.js`,`.jsx` files.
+
+## Common Errors and Solutions
+
+- `Text stings must be rendered withing a &lt;Text&gt; component.` in JSX
+    > Happens If we __terminate a JSX Tag__ with semi-colon (;) as shown below
+    > Remove the semi-colon and the rendering will be proper.
+
+   ```jsx
+    <View style={styles.containerStyle}>
+    <Image source={pic} style={styles.imageStyle} />;
+    </View>
+   ```
+
 ---
 [react_natvie_enable_jsx]: https://stackoverflow.com/questions/50311473/how-to-allow-react-native-to-enable-support-for-jsx-extension-files/55134051

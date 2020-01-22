@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 const HelloScreen = () => {
   return (
     <View style={styles.containerStyle}>
