@@ -8,10 +8,11 @@
 import React from 'react';
 // import HelloScreen from './screens/HelloScreen';
 import PicScreen from './screens/PicScreen';
-
 const App = () => {
   // return <HelloScreen />;
-  return <PicScreen />;
+  return (
+    <PicScreen source="https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg" />
+  );
 };
 
 export default App;

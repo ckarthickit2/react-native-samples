@@ -10,21 +10,24 @@ const styles = StyleSheet.create({
     height: 110,
   },
   containerStyle: {
-    top: '10%',
+    top: '2%',
     alignItems: 'center',
   },
 });
 
-const PicScreen = () => {
-  let pic = {
-    uri:
-      'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
-  };
+const PicScreen = props => {
   return (
     <View style={styles.containerStyle}>
-      {[0, 1, 2, 3].map(() => {
-        return <Image source={pic} style={styles.imageStyle} />;
+      {[0, 1, 2, 3].map((element, index) => {
+        return (
+          <Image
+            source={{uri: props.source}}
+            style={styles.imageStyle}
+            key={index}
+          />
+        );
       })}
+      {/** .map returns a new re-mapped Array but it still works !! Interestingly*/}
     </View>
   );
 };
