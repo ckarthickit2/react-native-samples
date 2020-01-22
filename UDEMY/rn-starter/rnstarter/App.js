@@ -4,7 +4,9 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 const navigator = createStackNavigator(
   {
-    Home: require('./src/screens/HomeScreen').default, //Lazy Loading using require instead of import
+    //We can even do require import, which will resolve module only upon function call
+    //This can be used in lazy-loading.
+    Home: require('./src/screens/HomeScreen').default,
   },
   {
     initialRouteName: 'Home',
