@@ -20,14 +20,11 @@ const PicScreen = () => {
     uri:
       'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
   };
-  //   let items = [0, 1, 2].map(element => {
-  //     <Image source={pic} style={styles.imageStyle} />;
-  //   });
   return (
     <View style={styles.containerStyle}>
-      <Image source={pic} style={styles.imageStyle} />
-      <Image source={pic} style={styles.imageStyle} />
-      <Image source={pic} style={styles.imageStyle} />
+      {[0, 1, 2, 3].map(() => {
+        return <Image source={pic} style={styles.imageStyle} />;
+      })}
     </View>
   );
 };
