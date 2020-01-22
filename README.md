@@ -59,6 +59,17 @@ module.exports = {
 }
 ```
 
+## Configuring ESLint for JSX
+
+```js
+parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  }
+```
 
 ---
 [react_natvie_enable_jsx]: https://stackoverflow.com/questions/50311473/how-to-allow-react-native-to-enable-support-for-jsx-extension-files/55134051
