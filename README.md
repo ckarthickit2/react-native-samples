@@ -71,6 +71,22 @@ parserOptions: {
   }
 ```
 
+## Configuring Script to run ES-Lint
+
+- Install `@react-native-community/eslint-config`
+
+```bash
+npm i @react-native-community/eslint-config --save-dev
+```
+
+- Configure script in `packages.json`
+
+```json
+"scripts": {
+  "pretty": "npx eslint --fix \"src/**/*.js*\""
+}
+```
+
 ## Configuring Script to run `Prettier`
 
 ``` json

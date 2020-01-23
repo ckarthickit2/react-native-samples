@@ -25,7 +25,9 @@ const BlinkingScreen = props => {
   if (isShowing) {
     return (
       <View style={styles.containerStyle}>
-        <Text style={styles.textStyle}>{props.text || 'NODATA'}</Text>
+        <Text style={styles.textStyle}>
+          {props.text || props.navigation.getParam('text') || 'NODATA'}
+        </Text>
       </View>
     );
   } else {

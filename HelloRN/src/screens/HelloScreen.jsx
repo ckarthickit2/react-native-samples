@@ -26,5 +26,10 @@ const HelloScreen = () => {
     </View>
   );
 };
-
+// HelloScreen.navigationOptions = ({screenProps}) => {
+//   console.log('=========something');
+//   return {
+//     title: 'something',
+//   };
+// };
 export default HelloScreen;
