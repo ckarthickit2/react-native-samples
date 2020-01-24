@@ -59,6 +59,53 @@ module.exports = {
 }
 ```
 
+## Suppport for `async` and `await` in eslint
+
+```js
+  {
+    ecmaVersion: 2017,
+  }
+```
+
+## Configuring Metro Bundler using `metro-config`
+
+- Install necessary packages
+
+  ```bash
+    npm i --save-dev metro-config
+  ```
+
+- configure `metro.config.js`
+
+  ```js
+  const {getDefaultConfig} = require('metro-config');
+  //Configure using an async IIFE
+  module.exports = (async () => {
+    //get default sourceExts, assetExts from metro-config
+    const {
+      resolver: {sourceExts, assetExts},
+    } = await getDefaultConfig();
+
+    //return a new metro-config object adding on top of default metro-config.
+    // It has a "transformer" object and "resolver" object.
+    return {
+      transformer: {
+        getTransformOptions: async () => ({
+          transform: {
+            experimentalImportSupport: false,
+            inlineRequires: false,
+          },
+        }),
+        babelTransformerPath: require.resolve('react-native-svg-transformer'),
+      },
+      resolver: {
+        //add jsx addittionaly as it is not added by default.
+        sourceExts: [...sourceExts, 'jsx'],
+      },
+    };
+  })();
+  ```
+
 ## Configuring ESLint for JSX
 
 ```js
@@ -96,6 +143,39 @@ npm i @react-native-community/eslint-config --save-dev
 ```
 
 > Now execute `npm run pretty` to apply __prettier__ to all `.js`,`.jsx` files.
+
+### Configuring `react-native-svg`
+
+- Install the necessary packages
+
+  ```bash
+    #save react-native-svg in dependencies
+    npm i --save react-native-svg
+    #save react-native-svg-transfomer in devDependencies
+    npm i --save-dev react-native-svg-transformer
+    #install necessary ios PODs
+    cd ios && pod install
+  ```
+
+  - Configure `metro.config.js` to remove svg from assetExt and add to sourceExt
+
+  ```js
+  //Initial metro.config.js is shown above
+  resolver: {
+        //remove svg from assetExt as it will get transformed into component by react-native-svg-transformer
+        assetExts: assetExts.filter(ext => ext !== 'svg'),
+        //append svg to sourceExts as they are treated as source from here-on
+        sourceExts: [...sourceExts, 'svg'],
+      },
+  ```
+
+## Configure Prettier to ignore files
+
+- Use `.prettierignore`
+
+```txt
+ *.json
+```
 
 ## Common Errors and Solutions
 
