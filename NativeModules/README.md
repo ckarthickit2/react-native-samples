@@ -80,8 +80,10 @@ npx create-react-native-module native-package
 - [react-native-create-library] - Tool to create a `React Native library` with a single command.
     > Caution: This only creates native modules without a view component.
 - [react-native-create-bridge] - Delivers bridge module in `Obj-C`, `Swift`, `Kotlin`, & `Java`.
+- [create-react-native-app] - (CRNA) - Tool for easy creation of React Native App Template.
 
 ---
 [create-react-native-module]: https://www.npmjs.com/package/create-react-native-module
 [react-native-create-library]: https://www.npmjs.com/package/react-native-create-library
 [react-native-create-bridge]: https://www.npmjs.com/package/react-native-create-bridge
+[create-react-native-app]: https://facebook.github.io/react-native/blog/2017/03/13/introducing-create-react-native-app
