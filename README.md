@@ -169,6 +169,19 @@ npm i @react-native-community/eslint-config --save-dev
       },
   ```
 
+### Configuring `react-native-elements` and `react-native-vector-icons`
+
+- Install & Link necessary pacakges
+
+```bash
+ npm i --save react-native-elements
+
+ # https://react-native-elements.github.io/react-native-elements/
+ npm i --save react-native-vector-icons
+ # link
+ npx react-native link react-native-vector-icons
+```
+
 ## Configure Prettier to ignore files
 
 - Use `.prettierignore`
