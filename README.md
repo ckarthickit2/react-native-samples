@@ -180,6 +180,8 @@ npm i @react-native-community/eslint-config --save-dev
  npm i --save react-native-vector-icons
  # link
  npx react-native link react-native-vector-icons
+ # or Just try pod install
+ cd ios && pod install
 ```
 
 ## Configure Prettier to ignore files
@@ -189,6 +191,10 @@ npm i @react-native-community/eslint-config --save-dev
 ```txt
  *.json
 ```
+
+## VSCode Extensions
+
+- [React Native Tools][react_native_tools]
 
 ## Common Errors and Solutions
 
@@ -204,3 +210,4 @@ npm i @react-native-community/eslint-config --save-dev
 
 ---
 [react_natvie_enable_jsx]: https://stackoverflow.com/questions/50311473/how-to-allow-react-native-to-enable-support-for-jsx-extension-files/55134051
+[react_native_tools]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native
