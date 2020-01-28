@@ -36,6 +36,7 @@ export const stackNavigatorRouteConfig = {
   ComponentSizeScreen: require('./screens/ComponentSizeScreen').default,
   FlexDemo: require('./screens/FlexDemoScreen').default,
   SVGDemo: require('./screens/SvgDemoScreen').default,
+  ThemesDemoScreen: require('./screens/ThemesDemoScreen').default,
 };
 
 export const stackNavigatorConfig = {
