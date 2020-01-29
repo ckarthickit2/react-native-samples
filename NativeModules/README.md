@@ -95,10 +95,10 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
 # While `{DEFAULT_PACKAGE_IDENTIFIER}` is the default package
 #       identifier, it is recommended to customize the package identifier.
 # CREATE new React Native module with the following options:
-# 
+#
 #   root moduleName: react-native-calculator
 #   name: calculator
-#   prefix: 
+#   prefix:
 #   modulePrefix: react-native
 #   packageIdentifier: com.reactlibrary
 #   platforms: ios,android
@@ -112,7 +112,7 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
 #   generateExample: true
 #   exampleName: example
 #   writeExamplePodfile: false
-# 
+#
 # CREATE: Check for valid react-native-cli tool version, as needed to generate the example project
 # react-native-cli: 2.0.1
 # react-native: n/a - not inside a React Native project directory
@@ -228,13 +228,13 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
 # info iOS module "react-native-calculator" has been successfully linked
 # info Linking "react-native-calculator" Android dependency
 # info Android module "react-native-calculator" has been successfully linked
-# 
+#
 # 📚  Created library module react-native-calculator in `./react-native-calculator`.
 # 🕘  It took 584524ms.
-# 
+#
 # ====================================================
 # YOU'RE ALL SET!
-# 
+#
 # To build and run iOS example project, do:
 # ----
 # cd react-native-calculator/example
@@ -245,6 +245,15 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
 # react-native run-ios
 # ----
 ```
+
+> Alternate Approach
+
+  1. `npx create-react-native-module <module_name>` - create a react-native module
+  2. cd `react-native-<module_name>/`
+  3. `npx react-native init example --version react-native@0.59` - Create an Example App inside react native module.
+  4. `npm i ../` - Add `react-native-<module_name>` __package__ which is __@ `../` folder__ as dependency to `example` app.
+  5. Run `npm i react-native@0.61.5` and `npm i react@16.9.0 --save` to updgrade `react` and `react-native` packages 
+  in both native-module and example packages.
 
 ## References
 
