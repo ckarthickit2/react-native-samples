@@ -33,6 +33,13 @@ npx react-native init AwesomeProject --version X.XX.X
 npx react-native init AwesomeTSProject --template react-native-template-typescript
 ```
 
+- View __current__ `react-native config`
+
+```bash
+npx --quiet --no-install react-native config
+#used in build.gradle for auto-linking.
+```
+
 ## Adding `react-navigation` and it's Peer Dependencies
 
 ```bash
