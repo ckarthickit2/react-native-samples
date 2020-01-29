@@ -255,6 +255,18 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
   5. Run `npm i react-native@0.61.5` and `npm i react@16.9.0 --save` to updgrade `react` and `react-native` packages
   in both native-module and example packages. (Needed only if we don't have latest react and react-native packages).
 
+## Consolidated Steps for `Calculator` example
+
+1. `npx create-react-native-module calculator`
+2. `cd react-native-calculator/`
+    >Open AndroidStudio / XCode and make necessary changes in the __NativeModule__ of __ReactPackage__.
+3. `npm i react@16.9.0 --save`
+4. `npm i react-native@0.61.5 --save`
+5. `cd ..`
+6. `npx react-native init CalculatorDemo`
+7. `cd CalculatorDemo`
+8. `npm install ../react-native-calculator --save`.
+
 ## References
 
 - [create-react-native-module][create-react-native-module] - Tool to create a `React Native library module` or `native view component`, with a single command.
