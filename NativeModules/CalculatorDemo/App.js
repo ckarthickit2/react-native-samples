@@ -7,26 +7,28 @@
  */
 
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View, Text, NativeModules} from 'react-native';
 import Calculator from 'react-native-calculator';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignContent: 'space-around',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 const App = () => {
-  Calculator.tryPing("Hello", 1, (msg)=> {
+  let nativeModules = JSON.stringify(NativeModules);
+  console.log(`NativeModuels = ${nativeModules}`);
+  Calculator.tryPing('Hello', 1, msg => {
     console.log(`msg is ${msg}`);
   });
   return (
     <View style={styles.container}>
       <Text>Hello World!</Text>
+      <Text>{nativeModules}</Text>
     </View>
-  )
-}
+  );
+};
 
 export default App;

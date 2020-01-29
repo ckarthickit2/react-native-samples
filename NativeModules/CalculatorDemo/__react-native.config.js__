@@ -1,7 +1,28 @@
 module.exports = {
   dependencies: {
-    'react-native-calculator': {
-      root: '/root/libraries',
-    },
+    "react-native-calculator": {
+      "root": "./node_modules/react-native-calculator",
+      "name": "react-native-calculator",
+      "platforms": {
+        "ios": {
+          "sourceDir": "./node_modules/react-native-calculator/ios",
+          "folder": "./node_modules/react-native-calculator",
+          "pbxprojPath": "./node_modules/react-native-calculator/ios/Calculator.xcodeproj/project.pbxproj",
+          "podfile": null,
+          "podspecPath": "./node_modules/react-native-calculator/react-native-calculator.podspec",
+          "projectPath": "./node_modules/react-native-calculator/ios/Calculator.xcodeproj",
+          "projectName": "Calculator.xcodeproj",
+          "libraryFolder": "Libraries",
+          "sharedLibraries": [],
+          "plist": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "./node_modules/react-native-calculator/android",
+          "folder": "./node_modules/react-native-calculator",
+          "packageImportPath": "import com.reactlibrary.CalculatorPackage;",
+          "packageInstance": "new CalculatorModule()"
+        }
+      },
   },
 };
