@@ -250,10 +250,10 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
 
   1. `npx create-react-native-module <module_name>` - create a react-native module
   2. cd `react-native-<module_name>/`
-  3. `npx react-native init example --version react-native@0.59` - Create an Example App inside react native module.
-  4. `npm i ../` - Add `react-native-<module_name>` __package__ which is __@ `../` folder__ as dependency to `example` app.
-  5. Run `npm i react-native@0.61.5` and `npm i react@16.9.0 --save` to updgrade `react` and `react-native` packages 
-  in both native-module and example packages.
+  3. `npx react-native init example --version react-native@0.61` - Create an Example App inside react native module.
+  4. `cd example` and `npm i ../` - Add `react-native-<module_name>` __package__ which is __@ `../` folder__ as dependency to `example` app.
+  5. Run `npm i react-native@0.61.5` and `npm i react@16.9.0 --save` to updgrade `react` and `react-native` packages
+  in both native-module and example packages. (Needed only if we don't have latest react and react-native packages).
 
 ## References
 

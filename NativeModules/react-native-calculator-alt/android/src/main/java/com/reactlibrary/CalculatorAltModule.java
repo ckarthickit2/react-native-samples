@@ -6,18 +6,18 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 
-public class CalculatorModule extends ReactContextBaseJavaModule {
+public class CalculatorAltModule extends ReactContextBaseJavaModule {
 
     private final ReactApplicationContext reactContext;
 
-    public CalculatorModule(ReactApplicationContext reactContext) {
+    public CalculatorAltModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
     }
 
     @Override
     public String getName() {
-        return "Calculator";
+        return "CalculatorAlt";
     }
 
     @ReactMethod
@@ -26,6 +26,7 @@ public class CalculatorModule extends ReactContextBaseJavaModule {
         callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
     }
 
+    @ReactMethod
     public void pingPromise(String stringArgument, int numberArgument, Promise promise) {
         // TODO: Implement some actually useful functionality
         promise.resolve("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
