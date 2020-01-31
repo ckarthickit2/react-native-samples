@@ -265,7 +265,7 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
 5. `cd ..`
 6. `npx react-native init CalculatorDemo`
 7. `cd CalculatorDemo`
-8. `npm install ../react-native-calculator --save`.
+8. `react-native install ../react-native-calculator`.
 
 ## References
 

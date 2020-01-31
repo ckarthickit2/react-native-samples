@@ -215,6 +215,19 @@ npm i @react-native-community/eslint-config --save-dev
     </View>
    ```
 
+- Installing Local Package as Dependency with `react-native`
+
+  >`npm install` with a __local path__ installs libraries in `node_modules` with a __symlink__ pointing to the local path of the package. Unfortunately this causes an issue with the `react native metro bundler` (" does not exist in the Haste module map"). See [here][install_local_dependency_rn] for more information.
+
+  __Solutions:__
+  1. Use `react-native install` instead of `npm install` as it doesn't create symbolic links.
+  2. Use [wml][npm_package_wml] which listens to changes in some folder (using Watchman) and copies changed files into another folder.
+  
+  > Please Note that there should not be any `node_modules` folder inside the locally linked package. This will cause unknown react-native module errors.
+  >> Eg., `Module RCTLog is not a registered callable module.`
+
 ---
 [react_natvie_enable_jsx]: https://stackoverflow.com/questions/50311473/how-to-allow-react-native-to-enable-support-for-jsx-extension-files/55134051
 [react_native_tools]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native
+[install_local_dependency_rn]: https://stackoverflow.com/questions/49730789/install-local-package-as-dependency-with-react-native
+[npm_package_wml]: https://www.npmjs.com/package/wml
