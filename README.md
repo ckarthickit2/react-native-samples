@@ -59,6 +59,53 @@ module.exports = {
 }
 ```
 
+## Suppport for `async` and `await` in eslint
+
+```js
+  {
+    ecmaVersion: 2017,
+  }
+```
+
+## Configuring Metro Bundler using `metro-config`
+
+- Install necessary packages
+
+  ```bash
+    npm i --save-dev metro-config
+  ```
+
+- configure `metro.config.js`
+
+  ```js
+  const {getDefaultConfig} = require('metro-config');
+  //Configure using an async IIFE
+  module.exports = (async () => {
+    //get default sourceExts, assetExts from metro-config
+    const {
+      resolver: {sourceExts, assetExts},
+    } = await getDefaultConfig();
+
+    //return a new metro-config object adding on top of default metro-config.
+    // It has a "transformer" object and "resolver" object.
+    return {
+      transformer: {
+        getTransformOptions: async () => ({
+          transform: {
+            experimentalImportSupport: false,
+            inlineRequires: false,
+          },
+        }),
+        babelTransformerPath: require.resolve('react-native-svg-transformer'),
+      },
+      resolver: {
+        //add jsx addittionaly as it is not added by default.
+        sourceExts: [...sourceExts, 'jsx'],
+      },
+    };
+  })();
+  ```
+
 ## Configuring ESLint for JSX
 
 ```js
@@ -71,6 +118,22 @@ parserOptions: {
   }
 ```
 
+## Configuring Script to run ES-Lint
+
+- Install `@react-native-community/eslint-config`
+
+```bash
+npm i @react-native-community/eslint-config --save-dev
+```
+
+- Configure script in `packages.json`
+
+```json
+"scripts": {
+  "pretty": "npx eslint --fix \"src/**/*.js*\""
+}
+```
+
 ## Configuring Script to run `Prettier`
 
 ``` json
@@ -80,6 +143,58 @@ parserOptions: {
 ```
 
 > Now execute `npm run pretty` to apply __prettier__ to all `.js`,`.jsx` files.
+
+### Configuring `react-native-svg`
+
+- Install the necessary packages
+
+  ```bash
+    #save react-native-svg in dependencies
+    npm i --save react-native-svg
+    #save react-native-svg-transfomer in devDependencies
+    npm i --save-dev react-native-svg-transformer
+    #install necessary ios PODs
+    cd ios && pod install
+  ```
+
+  - Configure `metro.config.js` to remove svg from assetExt and add to sourceExt
+
+  ```js
+  //Initial metro.config.js is shown above
+  resolver: {
+        //remove svg from assetExt as it will get transformed into component by react-native-svg-transformer
+        assetExts: assetExts.filter(ext => ext !== 'svg'),
+        //append svg to sourceExts as they are treated as source from here-on
+        sourceExts: [...sourceExts, 'svg'],
+      },
+  ```
+
+### Configuring `react-native-elements` and `react-native-vector-icons`
+
+- Install & Link necessary pacakges
+
+```bash
+ npm i --save react-native-elements
+
+ # https://react-native-elements.github.io/react-native-elements/
+ npm i --save react-native-vector-icons
+ # link
+ npx react-native link react-native-vector-icons
+ # or Just try pod install
+ cd ios && pod install
+```
+
+## Configure Prettier to ignore files
+
+- Use `.prettierignore`
+
+```txt
+ *.json
+```
+
+## VSCode Extensions
+
+- [React Native Tools][react_native_tools]
 
 ## Common Errors and Solutions
 
@@ -95,3 +210,4 @@ parserOptions: {
 
 ---
 [react_natvie_enable_jsx]: https://stackoverflow.com/questions/50311473/how-to-allow-react-native-to-enable-support-for-jsx-extension-files/55134051
+[react_native_tools]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native

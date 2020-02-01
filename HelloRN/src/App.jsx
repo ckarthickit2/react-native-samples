@@ -4,25 +4,15 @@
  *
  * @format
  */
-
 import React from 'react';
-// import HelloScreen from './screens/HelloScreen';
-// import PicScreen from './screens/PicScreen';
-// import BlinkingScreen from './screens/BlinkingScreen';
-// import StyleScreen from './screens/StyleScreen';
-import ComponentSizeScreen from './screens/ComponentSizeScreen';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {stackNavigatorRouteConfig, stackNavigatorConfig} from './app.config';
+
+const AppNavigator = createStackNavigator(stackNavigatorRouteConfig);
+const AppContainer = createAppContainer(AppNavigator, stackNavigatorConfig);
 const App = () => {
-  // return <HelloScreen />;
-
-  // return (
-  //   <PicScreen source="https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg" />
-  // );
-
-  // return <BlinkingScreen text="I love to Blink" />;
-
-  // return <StyleScreen />;
-
-  return <ComponentSizeScreen />;
+  return <AppContainer />;
 };
 
 export default App;

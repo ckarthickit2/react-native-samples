@@ -26,9 +26,9 @@ const FixedDimensionsComponent = () => {
   return (
     <View>
       {[
-        <View style={styles.smallCardStyle} />,
-        <View style={styles.mediumCardStyle} />,
-        <View style={styles.largeCardStyle} />,
+        <View style={styles.smallCardStyle} key={1} />,
+        <View style={styles.mediumCardStyle} key={2} />,
+        <View style={styles.largeCardStyle} key={3} />,
       ]}
     </View>
   );
