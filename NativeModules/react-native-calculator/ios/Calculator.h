@@ -1,5 +1,6 @@
 #import <React/RCTBridgeModule.h>
-
-@interface Calculator : NSObject <RCTBridgeModule>
+#import <React/RCTEventEmitter.h>
+#import <test.h>
+@interface Calculator : RCTEventEmitter <RCTBridgeModule> //NSObject <RCTBridgeModule>
 
 @end

@@ -265,7 +265,65 @@ npx create-react-native-module --generate-example --tvos-enabled calculator
 5. `cd ..`
 6. `npx react-native init CalculatorDemo`
 7. `cd CalculatorDemo`
-8. `react-native install ../react-native-calculator`.
+8. Add `"react-native-calculator": "file:../react-native-calculator"` to __CalculatorDemo__ `package.json` .
+9. Add `wml` as devDependency and create a link between the local package `react-native-calculator` and the
+Application package `CalculatorDemo`.
+
+    ```bash
+      cd CalculatorDemo
+      npm install --save-dev wml
+      npx wml add ../react-native-calculator/ node_modules/react-native-calculator
+      npx wml start
+    ```
+
+10. Now, Any change made to `react-native-calculator` will be reflected inside `node_modules` of `CalculatorDemo`.
+11. We can import `react-native-calculator/android` to Android Studio and it will have all necessary third-party dependencies already wired.
+12. When we open `react-native-calculator/ios/Calculator.xcworkspace` in XCode, we will encounter Import Errors.
+    >#import <React/RCTBridgeModule.h> file not found.  
+
+    We should execute the following in `react-native-calculator/ios/` folder to make it compilable and add desired changes.
+
+    ```bash
+    pod init #Will create a new Podfile in the current folder.
+    cd ..
+    npm install # This will download React / React-Native packages in node_modules of "react-native-calculator" .
+    # Now we should copy the dependent Pod's from "CalculatorDemo/ios/Podfile" into "react-native-calculator/ios/Podfile"
+    cd ios && pod install && cd .. # This will install the necessary pods locally and the Import Errors will be resolved !
+    npm run ios #Now ios app with link to a local native package will launch without any error.
+    ```
+
+    >   __The dependent Pods will look like below:__
+
+```ruby
+    pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
+    pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
+    pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
+    pod 'RCTTypeSafety', :path => "../node_modules/react-native/Libraries/TypeSafety"
+    pod 'React', :path => '../node_modules/react-native/'
+    pod 'React-Core', :path => '../node_modules/react-native/'
+    pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules'
+    pod 'React-Core/DevSupport', :path => '../node_modules/react-native/'
+    pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
+    pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation'
+    pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob'
+    pod 'React-RCTImage', :path => '../node_modules/react-native/Libraries/Image'
+    pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
+    pod 'React-RCTNetwork', :path => '../node_modules/react-native/Libraries/Network'
+    pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings'
+    pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
+    pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration'
+    pod 'React-Core/RCTWebSocket', :path => '../node_modules/react-native/'
+    pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
+    pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
+    pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
+    pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
+    pod 'ReactCommon/jscallinvoker', :path => "../node_modules/react-native/ReactCommon"
+    pod 'ReactCommon/turbomodule/core', :path => "../node_modules/react-native/ReactCommon"
+    pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+    pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+    pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+    pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+```
 
 ## References
 
