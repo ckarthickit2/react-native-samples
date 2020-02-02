@@ -13,14 +13,17 @@ import {
   NativeModules,
   NativeEventEmitter,
 } from 'react-native';
-import Calculator from 'react-native-calculator';
-// import InfiniteScroll from 'react-native-infinite-looping-scroll';
+import Calculator, {TextLabel} from 'react-native-calculator';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  textLabel: {
+    width: 100,
+    height: 30,
   },
 });
 
@@ -40,6 +43,7 @@ const App = () => {
       }`,
     );
   }
+  console.log(TextLabel);
   console.log('========================');
   Calculator.tryPing('Hello', 1, msg => {
     setPingMsg(`tryPing=${JSON.stringify(msg, null, 2)}`);
@@ -63,6 +67,12 @@ const App = () => {
       <Text>{promisePingMsg}</Text>
       <Text>========</Text>
       <Text>{eventMsg}</Text>
+      <TextLabel
+        text="Some Text"
+        style={styles.textLabel}
+        colour="#ff0000"
+        backgroundColour="#ffff00"
+      />
     </View>
   );
 };
