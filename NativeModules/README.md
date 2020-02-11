@@ -332,9 +332,23 @@ Application package `CalculatorDemo`.
     > Caution: This only creates native modules without a view component.
 - [react-native-create-bridge] - Delivers bridge module in `Obj-C`, `Swift`, `Kotlin`, & `Java`.
 - [create-react-native-app] - (CRNA) - Tool for easy creation of React Native App Template.
+- [Using typescript with existing RN Project][typescript_with_rn]
+- [Configuring TypeScript with ESLint][eslint_typescript_config]
+- [React Native GeoLocation][react_native_geolocation]
+- [React Native GeoLocation - Agontuk][agontuk_react_native_geolocation]
+- `npm i eslint-plugin-react --save-dev`.
+- Add `"lint:fix": "npx eslint './src/**/*.{ts,tsx}'"` in __scripts__ - package.json.
+- `"pretty:fix": "npx prettier \"src/**/*.ts*\" --write"` in __scripts__ - package.json.
+- [Publishing NPM Packages for RN][publish_npm_packages_rn]
 
 ---
 [create-react-native-module]: https://www.npmjs.com/package/create-react-native-module
 [react-native-create-library]: https://www.npmjs.com/package/react-native-create-library
 [react-native-create-bridge]: https://www.npmjs.com/package/react-native-create-bridge
 [create-react-native-app]: https://facebook.github.io/react-native/blog/2017/03/13/introducing-create-react-native-app
+[typescript_with_rn]: https://facebook.github.io/react-native/docs/typescript
+[eslint_typescript_config]: https://dev.to/benweiser/how-to-set-up-eslint-typescript-prettier-with-create-react-app-3675
+[react_native_geolocation]: https://github.com/react-native-community/react-native-geolocation
+[agontuk_react_native_geolocation]: https://github.com/Agontuk/react-native-geolocation-service
+[publish_npm_packages_rn]: https://www.freecodecamp.org/news/how-to-publish-a-react-native-component-to-npm-its-easier-than-you-think-51f6ae1ef850/
+
