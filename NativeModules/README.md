@@ -340,6 +340,7 @@ Application package `CalculatorDemo`.
 - Add `"lint:fix": "npx eslint './src/**/*.{ts,tsx}'"` in __scripts__ - package.json.
 - `"pretty:fix": "npx prettier \"src/**/*.ts*\" --write"` in __scripts__ - package.json.
 - [Publishing NPM Packages for RN][publish_npm_packages_rn]
+- [Using Reducer Hook + Context for State Management][reducer_and_context_state_mgmnt_rn]
 
 ---
 [create-react-native-module]: https://www.npmjs.com/package/create-react-native-module
@@ -351,4 +352,5 @@ Application package `CalculatorDemo`.
 [react_native_geolocation]: https://github.com/react-native-community/react-native-geolocation
 [agontuk_react_native_geolocation]: https://github.com/Agontuk/react-native-geolocation-service
 [publish_npm_packages_rn]: https://www.freecodecamp.org/news/how-to-publish-a-react-native-component-to-npm-its-easier-than-you-think-51f6ae1ef850/
+[reducer_and_context_state_mgmnt_rn]: https://www.freecodecamp.org/news/state-management-with-react-hooks/
 
