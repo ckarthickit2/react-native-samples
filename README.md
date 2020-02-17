@@ -242,6 +242,7 @@ npm i @react-native-community/eslint-config --save-dev
 - `"pretty:fix": "npx prettier \"src/**/*.ts*\" --write"` in __scripts__ - package.json.
 - [Publishing NPM Packages for RN][publish_npm_packages_rn]
 - [Using Reducer Hook + Context for State Management][reducer_and_context_state_mgmnt_rn]
+- [React Native UI Component for Android][rn_native_component_android]
 
 ---
 [react_natvie_enable_jsx]: https://stackoverflow.com/questions/50311473/how-to-allow-react-native-to-enable-support-for-jsx-extension-files/55134051
@@ -258,3 +259,4 @@ npm i @react-native-community/eslint-config --save-dev
 [agontuk_react_native_geolocation]: https://github.com/Agontuk/react-native-geolocation-service
 [publish_npm_packages_rn]: https://www.freecodecamp.org/news/how-to-publish-a-react-native-component-to-npm-its-easier-than-you-think-51f6ae1ef850/
 [reducer_and_context_state_mgmnt_rn]: https://www.freecodecamp.org/news/state-management-with-react-hooks/
+[rn_native_component_android]: https://pspdfkit.com/blog/2018/react-native-ui-component-for-android/
