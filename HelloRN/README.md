@@ -145,3 +145,14 @@
             3. click on Disable.
 
     - Add `flow` to `packages.json`.
+
+---
+
+## App Guide
+
+- Home Screen
+
+  ![App Home Screen][app_home_screen]
+---
+
+[app_home_screen]: art/rn-hello-home.png
