@@ -37,6 +37,7 @@ export const stackNavigatorRouteConfig = {
   FlexDemo: require('./screens/FlexDemoScreen').default,
   SVGDemo: require('./screens/SvgDemoScreen').default,
   ThemesDemoScreen: require('./screens/ThemesDemoScreen').default,
+  CachedImage: require('./screens/CachedImage').default
 };
 
 export const stackNavigatorConfig = {
